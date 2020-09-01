@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="estilos.css" />
+    <script src="funciones.js"></script>
+
+    <title>Rectangulos</title>
+	<script>
+		function fDibujar() 
+		{
+			var canvas = document.getElementById("myCanvas");
+			var ciclo = document.getElementById("cantidad").value;
+			
+			var ctx = canvas.getContext("2d");
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+			
+			for (var i =  0; i < ciclo; i++)
+			{
+				fRectangulo(canvas);
+			}
+		}
+	</script>
+</head>
+<body>
+<table border="0" cellpadding="1" cellspacing="1">
+	<tr>
+		<td>Ingrese la cantidad de rectangulos que desea dibujar:</td>
+		<td><input name="cantidad" type="text" class="tf01" id="cantidad" value="1" size="2" maxlength="2" onKeyPress="solo_numeros()"></td>
+		<td><input name="dibujar" type="button" class="tf01" id="dibujar" value="Dibujar" onclick="fDibujar();"></td>
+	</tr>
+	<tr>
+		<td colspan="3"></td>
+	</tr>
+	<tr>
+		<td colspan="3">
+			<canvas id="myCanvas" width="400" height="400" style="border:6px rgb(92, 10, 200) solid"></canvas>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="3"></td>
+	</tr>
+	<tr>
+		<td colspan="3">Es posible que algunos rectangulos queden debajo de otros y no los pueda ver.</td>
+	</tr>	
+</table>
+
+</body>
+</html>
+
